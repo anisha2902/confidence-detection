@@ -1,0 +1,21 @@
+<!-- confidence_app/templates/audio_upload.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Audio File</title>
+</head>
+<body>
+    <h1>Upload an Audio File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="audio_file">
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    {% if confidence %}
+    <p>Confidence: {{ confidence }}</p>
+    {% endif %}
+</body>
+</html>
